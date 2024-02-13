@@ -1,0 +1,47 @@
+﻿@page "/person/list"
+@inject InsCorpDbContext db
+<h3>Seznam osob</h3>
+
+<table class="table">
+    <tr>
+        <td>
+            Jméno
+            </td>
+        <td>
+            Příjmení
+        </td>
+        <td>
+            Datum narození
+        </td>
+        <td>
+            E-mail
+        </td>
+    </tr>
+    @foreach (var person in people)
+    {
+        <tr>
+            <td>
+                @person.FirstName;
+            </td>
+            <td>
+                @person.LastName;
+            </td>
+            <td>
+                @person.DateOfBirth.ToShortDateString();
+            </td>
+            <td>
+                @person.Email;
+            </td>
+        </tr>
+    }
+</table>
+
+
+@code {
+    List<Person> people = new();
+
+    protected override void OnInitialized()
+    {
+        people = db.Persons.Take(20).ToList();
+    }
+}
