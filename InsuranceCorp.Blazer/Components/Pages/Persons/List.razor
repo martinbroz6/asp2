@@ -56,7 +56,7 @@
             <button class="btn btn-primary btn-sm bg-success" disabled="@bEnabled" @onclick="Prev">
                zpět
             </button>
-            <button class="btn btn-primary btn-sm bg-success" @onclick="Next">
+            <button class="btn btn-primary btn-sm @sClass" @onclick="Next">
                vpřed
             </button>
         </td>
@@ -68,6 +68,7 @@
 
     int iCurrentPage = 0;
     bool bEnabled => iCurrentPage == 0;
+    string sClass = "bg-success";
 
     protected override void OnInitialized()
     {
