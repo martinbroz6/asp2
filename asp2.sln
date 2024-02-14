@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsuranceCorp.Model", "Insu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCorp.WEBAPI", "InsuranceCorp.WEBAPI\InsuranceCorp.WEBAPI.csproj", "{1CC471C4-1225-42B9-9DB9-F042B03C49CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceCorp.MinimalAPI", "InsuranceCorp.MinimalAPI\InsuranceCorp.MinimalAPI.csproj", "{4230837A-D341-4357-BFAE-984BB09F4FA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{1CC471C4-1225-42B9-9DB9-F042B03C49CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CC471C4-1225-42B9-9DB9-F042B03C49CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CC471C4-1225-42B9-9DB9-F042B03C49CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4230837A-D341-4357-BFAE-984BB09F4FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4230837A-D341-4357-BFAE-984BB09F4FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4230837A-D341-4357-BFAE-984BB09F4FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4230837A-D341-4357-BFAE-984BB09F4FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

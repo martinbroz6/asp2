@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InsuranceCorp.Data\InsuranceCorp.Data.csproj" />
+    <ProjectReference Include="..\InsuranceCorp.Model\InsuranceCorp.Model.csproj" />
+  </ItemGroup>
+
+</Project>
