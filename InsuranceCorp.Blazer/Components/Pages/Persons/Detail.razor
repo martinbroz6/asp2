@@ -6,23 +6,31 @@
 <dl class="row">
     <dt class="col-sm-2">Jméno</dt>
     <dd class="col-sm-10">
-        @person.FirstName;
+        @person.FirstName
     </dd>
     <dt class="col-sm-2">Příjmení</dt>
     <dd class="col-sm-10">
-        @person.LastName;
+        @person.LastName
     </dd>
     <dt class="col-sm-2">Datum narození</dt>
     <dd class="col-sm-10">
-        @person.DateOfBirth.ToShortDateString();
+        @person.DateOfBirth.ToShortDateString()
     </dd>
     <dt class="col-sm-2">Email</dt>
     <dd class="col-sm-10">
-        @person.Email;
+        @person.Email
     </dd>
     <dt class="col-sm-2">Rodné číslo</dt>
     <dd class="col-sm-10">
-        @person.BirthNumber;
+        @person.BirthNumber
+    </dd>
+    <dt class="col-sm-2">Adresa</dt>
+    <dd class="col-sm-10">
+        @person.Address.ToString()
+    </dd>
+    <dt class="col-sm-2">Smlouva</dt>
+    <dd class="col-sm-10">
+        @person.Contracts.ToString()
     </dd>
 </dl>
 
