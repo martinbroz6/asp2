@@ -1,0 +1,6 @@
+@InsuranceCorp.WEBAPI_HostAddress = http://localhost:5282
+
+GET {{InsuranceCorp.WEBAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
