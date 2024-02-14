@@ -51,18 +51,48 @@
             </td>
         </tr>
     }
+    <tr>
+        <td colspan="6">
+            <button class="btn btn-primary btn-sm bg-success" @onclick="Prev">
+               zpět
+            </button>
+            <button class="btn btn-primary btn-sm bg-success" @onclick="Next">
+               vpřed
+            </button>
+        </td>
+    </tr>
 </table>
 
 @code {
     List<Person> people = new();
 
+    int iCurrentPage = 0;
+
     protected override void OnInitialized()
     {
-        people = db.Persons.Take(20).ToList();
+        LoadPeople();
     }
 
     void EditPerson(int id)
     {
         nav.NavigateTo($"/person/edit/{id}");
+    }
+
+    void LoadPeople()
+    {
+        people = db.Persons.Skip(iCurrentPage * 20).Take(20).ToList();
+    }
+
+    void Prev()
+    {
+        if (iCurrentPage > 0)
+            --iCurrentPage;
+        LoadPeople();
+    }
+
+    void Next()
+    {
+        ++iCurrentPage;
+        LoadPeople();
     }
 }
