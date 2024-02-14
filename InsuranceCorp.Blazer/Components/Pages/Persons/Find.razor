@@ -1,0 +1,76 @@
+﻿@page "/person/find"
+
+<h3>Vyhledat dle e-mailu</h3>
+
+<EditForm Model="sEmail" OnSubmit="FindPerson">
+
+    <div class="row">
+        <div class="col-auto">
+            <label>Email</label>
+        </div>
+        <div class="col-auto">
+            <InputText @bind-Value="sEmail" class="form-control" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Vyhledat</button>
+        </div>
+    </div>
+
+</EditForm>
+
+@if (result != null)
+{
+    <table class="table">
+        <tr>
+            <td>
+                Jméno
+            </td>
+            <td>
+                Příjmení
+            </td>
+            <td>
+                Datum narození
+            </td>
+            <td>
+                E-mail
+            </td>
+            <td>
+                Akce
+            </td>
+        </tr>
+        @foreach (var person in result)
+        {
+            <tr>
+                <td>
+                    @person.FirstName
+                </td>
+                <td>
+                    @person.LastName
+                </td>
+                <td>
+                    @person.DateOfBirth.ToShortDateString()
+                </td>
+                <td>
+                    <a href="/person/detail/@person.Id">
+                        @person.Email
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@code {
+    string sEmail = "";
+    List<Person> result = new();
+
+    async Task FindPerson()
+    {
+        // na konci metody se tento httpclient -> dispose
+        using HttpClient client = new HttpClient();
+
+        var apiurl ="https://localhost:7035";
+
+        result = await client.GetFromJsonAsync<List<Person>>($"{apiurl}/api/person/find/{sEmail}");
+    }
+}
