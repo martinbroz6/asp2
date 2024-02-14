@@ -1,5 +1,6 @@
 ﻿using InsuranceCorp.Data;
 using InsuranceCorp.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,7 +25,14 @@ namespace InsuranceCorp.WEBAPI.Controllers
             return db.Persons.Skip(start).Take(take).ToList();
         }
 
+        [HttpGet("Find/{email}")]
+        public ActionResult<List<Person>> Find(string email)
+        {
+            return db.Persons.Where(x => x.Email != null && x.Email.Contains(email)).ToList();
+        }
+
         [HttpGet("{id:int}")]
+        [AllowAnonymous]
         public ActionResult<Person> getPerson(int id)
         {
             var person = db.Persons
